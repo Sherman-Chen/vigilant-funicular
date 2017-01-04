@@ -1,15 +1,15 @@
 {
   "name": "vigilant-funicular",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "submission for job application to Symphony Commerce",
+  "main": "Entry.jsx",
   "scripts": {
     "test": "mocha --require test/helpers/setup.js",
     "build": "webpack",
     "start": "nodemon src/server/server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["Thank you for considering my application"],
+  "author": "Sherman Chen",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.15.3",
