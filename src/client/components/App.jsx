@@ -1,5 +1,6 @@
 // import libraries
 import React from 'react';
+import { Link } from 'react-router';
 
 // import components
 import Item from './Item';
@@ -47,7 +48,7 @@ export default class App extends React.Component {
 				<div className="store_container">
 					<div className="nav">
 						<div className="store_title">Store Page</div>
-						<div className="shopping_cart">{this.state.itemsInCart} Items in Cart</div>
+						<Link to="/cart" className="shopping_cart">{this.state.itemsInCart} Items in Cart</Link>
 					</div>
 					<div>
 						{this.state.products.map((item) => {
