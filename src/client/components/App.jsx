@@ -1,12 +1,11 @@
 // import libraries
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 // import components
 import Item from './Item';
 
 // start class App
-class App extends React.Component {
+export default class App extends React.Component {
 	constructor() {
 		super();
 		this.state = {
@@ -66,5 +65,3 @@ class App extends React.Component {
 		}
 	} // end render
 } // end class App
-
-ReactDOM.render(<App />, document.getElementById('app'));
