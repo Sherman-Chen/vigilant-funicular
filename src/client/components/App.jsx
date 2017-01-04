@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Hello from './Hello';
-
 class App extends React.Component {
 	constructor() {
 		super()
 		this.state = {
-			products: []
+			products: ''
 		}
 	}
 
@@ -31,11 +29,18 @@ class App extends React.Component {
 	}
 
 	render() {
-		return (
-			<div>
-				<Hello />
-			</div>
-		)
+		// due to async request only render content when the response has been received, else render a loading message
+		if (this.state.products.length) {
+			return (
+				<div>
+					
+				</div>
+			)
+		} else {
+			return (
+				<div>Loading...</div>
+			)
+		}
 	}
 }
 
