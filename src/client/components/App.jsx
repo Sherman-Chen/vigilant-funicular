@@ -14,14 +14,14 @@ class App extends React.Component {
 			itemsInCart: 0
 		};
 		this.addToCart = this.addToCart.bind(this);
-	}
+	} // end constructor
 
 	addToCart() {
 		console.log('wired!');
 		this.setState({
 			itemsInCart: this.state.itemsInCart += 1
 		});
-	}
+	} // end addToCart
 
 	componentDidMount() {
 		// on mount make GET request for data
@@ -68,4 +68,3 @@ class App extends React.Component {
 } // end class App
 
 ReactDOM.render(<App />, document.getElementById('app'));
-
