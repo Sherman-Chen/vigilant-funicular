@@ -50,10 +50,10 @@ export default class App extends React.Component {
 						<div className="store_title">Store Page</div>
 						<Link to="/cart" className="shopping_cart">{this.state.itemsInCart} Items in Cart</Link>
 					</div>
-					<div>
-						{this.state.products.map((item) => {
-							return <Item name={item.name} image={item.mainImage.ref} alt={item.name} price={item.defaultPriceInCents} addToCart={this.addToCart} key={item.id} />
-						})}
+					<div className="items">
+						{this.state.products.map((item) => (
+							<Item name={item.name} image={item.mainImage.ref} alt={item.name} price={item.defaultPriceInCents} addToCart={this.addToCart} key={item.id} />
+						))}
 					</div>
 				</div>
 			)
