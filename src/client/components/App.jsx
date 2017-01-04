@@ -8,11 +8,19 @@ import Item from './Item';
 // start class App
 class App extends React.Component {
 	constructor() {
-		super()
+		super();
 		this.state = {
 			products: '',
 			itemsInCart: 0
-		}
+		};
+		this.addToCart = this.addToCart.bind(this);
+	}
+
+	addToCart() {
+		console.log('wired!');
+		this.setState({
+			itemsInCart: this.state.itemsInCart += 1
+		});
 	}
 
 	componentDidMount() {
@@ -42,11 +50,11 @@ class App extends React.Component {
 				<div className="store_container">
 					<div className="nav">
 						<div className="store_title">Store Page</div>
-						<div className="shopping_cart">View Cart {this.state.itemsInCart}</div>
+						<div className="shopping_cart">{this.state.itemsInCart} Items in Cart</div>
 					</div>
 					<div>
 						{this.state.products.map((item) => {
-							return <Item name={item.name} image={item.mainImage.ref} alt={item.name} price={item.defaultPriceInCents} key={item.id} />
+							return <Item name={item.name} image={item.mainImage.ref} alt={item.name} price={item.defaultPriceInCents} addToCart={this.addToCart} key={item.id} />
 						})}
 					</div>
 				</div>
