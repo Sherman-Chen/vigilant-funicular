@@ -16,24 +16,22 @@ export default class App extends React.Component {
 	} // end constructor
 
 	addToCart() {
-		console.log('wired!');
 		this.setState({
 			itemsInCart: this.state.itemsInCart += 1
 		});
 	} // end addToCart
 
 	componentDidMount() {
-		// on mount make GET request for data
-		fetch('https://sneakpeeq-sites.s3.amazonaws.com/interviews/ce/feeds/store.js')
+		// on mount make GET request to server which then pings the url to fetch for data
+		/* we could also just directly fetch the data ourselves, but we interact with our server first, 
+		incase we need to perform any other operations before receiving the data to render/display */
+		fetch('http://localhost:8080/data')
 		.then(res => {
-			// resolve promise
 			res.json()
 			.then(data => {
-				// update state to grab products info
-				const products = data.products;
 				this.setState({
-					products: products
-				})
+					products: data
+				});
 			});
 		})
 		.catch(err => {
