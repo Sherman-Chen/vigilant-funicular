@@ -10,7 +10,8 @@ class App extends React.Component {
 	constructor() {
 		super()
 		this.state = {
-			products: ''
+			products: '',
+			itemsInCart: 0
 		}
 	}
 
@@ -39,7 +40,10 @@ class App extends React.Component {
 			// here we map over a custom component, providing the necessary props to render the desired content
 			return (
 				<div className="store_container">
-					<header className="store_title">Store Page</header>
+					<div className="nav">
+						<div className="store_title">Store Page</div>
+						<div className="shopping_cart">View Cart {this.state.itemsInCart}</div>
+					</div>
 					<div>
 						{this.state.products.map((item) => {
 							return <Item name={item.name} image={item.mainImage.ref} alt={item.name} price={item.defaultPriceInCents} key={item.id} />

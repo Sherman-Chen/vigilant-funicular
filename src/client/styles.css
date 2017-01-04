@@ -10,10 +10,23 @@ body {
 	align-items: center;
 }
 
+.nav {
+	display: flex;
+	flex-direction: row;
+	width: 90vw;
+	margin-bottom: 5px;
+	justify-content: space-between;
+	align-items: center;
+}
+
 .store_title {
 	color: orange;
-	font-size: 5rem;
-	margin-bottom: 5px;
+	font-size: 3rem;
+}
+
+.shopping_cart {
+	font-size: 1rem;
+	color: white;
 }
 
 /* Item.jsx */
