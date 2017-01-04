@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Item from './Item';
+
 class App extends React.Component {
 	constructor() {
 		super()
@@ -33,7 +35,9 @@ class App extends React.Component {
 		if (this.state.products.length) {
 			return (
 				<div>
-					
+					{this.state.products.map((item) => {
+						return <Item name={item.name} image={item.mainImage.ref} alt={item.name} price={item.defaultPriceInCents} key={item.id} />
+					})}
 				</div>
 			)
 		} else {
